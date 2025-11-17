@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Trinity Collective – Visual & Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- React & Babel from CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="trinity.css">
+</head>
+<body>
+  <main style="padding: 2rem; background:#f3f4f6; min-height:100vh;">
+    <div id="root"></div>
+  </main>
+
+  <script type="text/babel">
+
+    const members = [
+      {
+        id: "jasmine",
+        name: "Jasmine",
+        title: "Chief Vision & Strategy",
+        archetype: "The Visionary Architect",
+        lane: "Clarity · Pivot Coaching · Leadership · Systems · HR/Comp",
+        keywords: ["Frameworks", "Strategy", "Healing", "Career/Business Pivots"],
+        supports:
+          "Gives language, frameworks, and strategic direction to Shay’s lifestyle empire and Thessa’s wealth/legacy model.",
+        receives:
+          "Receives elevated visual storytelling from Shay and grounded systems/operations from Thessa so she doesn’t carry execution alone."
+      },
+      {
+        id: "shay",
+        name: "Shay",
+        title: "Chief Creative & Brand",
+        archetype: "The Creative Catalyst",
+        lane: "Lifestyle · Beauty · Fashion · Motivation through Richness & Wealth Energy",
+        keywords: ["Aesthetics", "Storytelling", "Influence", "Community"],
+        supports:
+          "Gives emotional resonance, visuals, and trend-setting brand presence to Jasmine’s frameworks and Thessa’s wealth education.",
+        receives:
+          "Receives strategic clarity, launch structure, and simple systems so her creativity becomes monetized, consistent, and sustainable."
+      },
+      {
+        id: "thessa",
+        name: "Thessa",
+        title: "Chief Systems & Wealth Ops",
+        archetype: "The Systems Navigator",
+        lane: "Life Insurance · Real Estate · Legacy · Family Wealth Systems",
+        keywords: ["Processes", "Automation", "Legacy", "Protection"],
+        supports:
+          "Builds simple, repeatable systems and operational flows that support Jasmine’s programs and Shay’s content/brand execution.",
+        receives:
+          "Receives brand elevation, storytelling, and strategic positioning so her wealth work feels aspirational, clear, and deeply human."
+      }
+    ];
+
+    const phases = [
+      {
+        id: 1,
+        label: "Phase 1",
+        title: "Identity Alignment",
+        focus: "Clarify each woman's lane, genius, and desired empire.",
+        insights: [
+          "Jasmine: Vision, Clarity, Frameworks & Pivot Strategy.",
+          "Shay: Brand, Lifestyle, Aesthetic Storytelling & Influence.",
+          "Thessa: Wealth, Legacy, Real Estate, Insurance & Systems."
+        ]
+      },
+      {
+        id: 2,
+        label: "Phase 2",
+        title: "Unified Mission & Message",
+        focus: "Weave a shared narrative that holds all three empires.",
+        insights: [
+          "Central mission: Healing + Lifestyle + Wealth.",
+          "Position as a holistic feminine wealth & alignment ecosystem.",
+          "Clarify who you serve and the emotional promise of the Collective."
+        ]
+      },
+      {
+        id: 3,
+        label: "Phase 3",
+        title: "Collaboration Flow & Roles",
+        focus: "Design how you support one another without hierarchy.",
+        insights: [
+          "Jasmine leads: strategy, clarity, program architecture.",
+          "Shay leads: visuals, emotional resonance, brand experience.",
+          "Thessa leads: systems, automations, backend wealth structure."
+        ]
+      },
+      {
+        id: 4,
+        label: "Phase 4",
+        title: "Offer & Content Ecosystem",
+        focus: "Translate the mission into tangible offers & content streams.",
+        insights: [
+          "Shared offers: retreats, workshops, live experiences, digital suites.",
+          "Individual offers: 1:1 coaching, lifestyle content, wealth planning.",
+          "Content pillars mapped to: healing, lifestyle, legacy & wealth."
+        ]
+      },
+      {
+        id: 5,
+        label: "Phase 5",
+        title: "Expansion & Legacy",
+        focus: "Scale the Trinity Collective as a long-term brand and movement.",
+        insights: [
+          "Future: podcast, courses, membership, wealth academy.",
+          "Create SOPs, templates, and signature methods for each lane.",
+          "Position the Collective for partnerships, press, and speaking."
+        ]
+      }
+    ];
+
+    const TrinityCollectiveDiagram = () => {
+      return (
+        <div className="tc-root">
+          <div className="tc-header">
+            <p className="tc-pretitle">Collaboration Identity</p>
+            <h1 className="tc-title">The Trinity Collective</h1>
+            <p className="tc-subtitle">
+              Three women. Three wealth lanes. One unified ecosystem of healing, wealth,
+              and aligned feminine leadership.
+            </p>
+          </div>
+
+          <div className="tc-center-pill">
+            <p className="tc-center-label">Shared Mission</p>
+            <p className="tc-center-text">
+              Guide women into rich, rooted, and aligned lives through{" "}
+              <strong>healing, clarity, lifestyle, and legacy-centered wealth.</strong>
+            </p>
+          </div>
+
+          <div className="tc-grid">
+            {members.map((m) => (
+              <article key={m.id} className="tc-card">
+                <div className="tc-card-header">
+                  <h2 className="tc-card-name">{m.name}</h2>
+                  <p className="tc-card-title">{m.title}</p>
+                </div>
+
+                <div className="tc-chip tc-chip-archetype">{m.archetype}</div>
+
+                <div className="tc-section">
+                  <p className="tc-label">Primary Lane</p>
+                  <p className="tc-body">{m.lane}</p>
+                </div>
+
+                <div className="tc-section">
+                  <p className="tc-label">Core Energies</p>
+                  <div className="tc-tag-row">
+                    {m.keywords.map((kw) => (
+                      <span key={kw} className="tc-tag">
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="tc-section">
+                  <p className="tc-label">How She Elevates the Collective</p>
+                  <p className="tc-body">{m.supports}</p>
+                </div>
+
+                <div className="tc-section">
+                  <p className="tc-label">What She Receives From the Collective</p>
+                  <p className="tc-body">{m.receives}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="tc-footer">
+            <p className="tc-footer-heading">Collab Promise</p>
+            <p className="tc-footer-text">
+              No one is “on” anyone&apos;s team — each woman is a CEO of her own lane.
+              The Trinity Collective is where those lanes intertwine to create
+              <strong> shared wealth, shared healing, and shared impact.</strong>
+            </p>
+          </div>
+        </div>
+      );
+    };
+
+    const TrinityCollectiveRoadmap = () => {
+      return (
+        <div className="tc-roadmap-root">
+          <div className="tc-roadmap-header">
+            <p className="tc-pretitle">Collaboration Roadmap</p>
+            <h2 className="tc-title">The Trinity Collective Roadmap</h2>
+            <p className="tc-subtitle">
+              A guided path for how Jasmine, Shay, and Thessa build their individual empires
+              and a shared ecosystem of healing, lifestyle, and wealth.
+            </p>
+          </div>
+
+          <div className="tc-roadmap-timeline">
+            <div className="tc-roadmap-line" />
+            {phases.map((phase, index) => (
+              <div key={phase.id} className="tc-roadmap-item">
+                <div className="tc-roadmap-dot-wrapper">
+                  <div className="tc-roadmap-dot" />
+                  <span className="tc-roadmap-phase-label">{phase.label}</span>
+                </div>
+
+                <div className="tc-roadmap-card">
+                  <h3 className="tc-roadmap-title">{phase.title}</h3>
+                  <p className="tc-roadmap-focus">{phase.focus}</p>
+                  <ul className="tc-roadmap-insights">
+                    {phase.insights.map((insight) => (
+                      <li key={insight} className="tc-roadmap-insight">
+                        {insight}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="tc-roadmap-tag">
+                    {index === 0 && "Start: Who are we individually?"}
+                    {index === 1 && "Anchor: What do we stand for together?"}
+                    {index === 2 && "Flow: How do we move together?"}
+                    {index === 3 && "Build: What are we offering the world?"}
+                    {index === 4 && "Scale: How do we create long-term legacy?"}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    };
+
+    const App = () => {
+      return (
+        <>
+          <TrinityCollectiveDiagram />
+          <div style={{ marginTop: "3rem" }}>
+            <TrinityCollectiveRoadmap />
+          </div>
+        </>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+
+  </script>
+</body>
+</html>
